@@ -1,0 +1,14 @@
+<!--<h1>Gallery List</h1>-->
+
+<div>
+    <!--<label ng-bind="$ctrl.album.albumId"></label>-->
+    <label ng-bind="$ctrl.album.title"></label>
+    <button ng-click="display=!display">+</button>
+</div>
+
+<!--<div ng-repeat="photo in $ctrl.photos | filter: (albumId: $ctrl.album.albumId):true">-->
+    <div ng-show="display" >
+    <div ng-repeat="photo in $ctrl.photos | filter: { albumId: $ctrl.album.albumId } : true">
+        <a href="{{photo.photoUrl}}" target="_blank"><img ng-src="{{photo.thumbnailUrl}}" class="pic"></a>
+    </div>
+</div>
